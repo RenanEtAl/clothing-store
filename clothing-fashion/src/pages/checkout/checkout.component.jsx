@@ -10,7 +10,13 @@ import {
   selectCartTotal
 } from "../../redux/cart/cart.selectors";
 
-import { CheckoutPageContainer, CheckoutHeaderContainer, HeaderBlockContainer, TotalContainer, WarningContainer } from "./checkout.styles";
+import {
+  CheckoutPageContainer,
+  CheckoutHeaderContainer,
+  HeaderBlockContainer,
+  TotalContainer,
+  WarningContainer
+} from "./checkout.styles";
 
 const CheckoutPage = ({ cartItems, total }) => (
   <CheckoutPageContainer>
