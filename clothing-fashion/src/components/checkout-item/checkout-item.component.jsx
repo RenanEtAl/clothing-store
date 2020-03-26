@@ -38,4 +38,5 @@ const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item)),
   removeItem: item => dispatch(removeItem(item))
 });
+
 export default connect(null, mapDispatchToProps)(CheckoutItem);
