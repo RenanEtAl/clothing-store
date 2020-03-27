@@ -14,6 +14,7 @@ export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
+
 `;
 
 export const OptionsContainer = styled.div`
@@ -27,4 +28,9 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+
+  &:hover{
+    background-color: lightgray;
+    border-radius: 8px;
+  }
 `;

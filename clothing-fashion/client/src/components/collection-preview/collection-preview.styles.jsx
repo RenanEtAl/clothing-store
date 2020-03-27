@@ -7,11 +7,14 @@ export const CollectionPreviewContainer = styled.div`
 `;
 
 export const TitleContainer = styled.h1`
+  padding: 12px;
   font-size: 28px;
   margin-bottom: 25px;
   cursor: pointer;
   &:hover {
-    color: grey;
+    color: black;
+    background-color: lightgrey;
+    border-radius: 6px;
   }
 `;
 
