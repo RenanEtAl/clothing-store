@@ -41,20 +41,22 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 // sending shop data to firebase
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) =>{
-  const collectionRef = firestore.collection(collectionKey)
-  console.log('collection Ref =>',collectionRef)
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
+  console.log("collection Ref =>", collectionRef);
 
   const batch = firestore.batch();
   objectsToAdd.forEach(obj => {
     const newDocRef = collectionRef.doc();
-    console.log('newDocRef =>', newDocRef)
+    console.log("newDocRef =>", newDocRef);
     batch.set(newDocRef, obj);
   });
 
   return await batch.commit();
-
-}
+};
 
 // getting collection data from firebase
 export const convertCollectionsSnapshotToMap = collections => {
@@ -77,14 +79,25 @@ export const convertCollectionsSnapshotToMap = collections => {
   }, {});
 };
 
+// recreating persistence
+// return a promise to work with redux-saga
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
 // google popup prompt:
-provider.setCustomParameters({ prompt: "select_account" });
+googleProvider.setCustomParameters({ prompt: "select_account" });
 
 // signInWithGoogle
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;
