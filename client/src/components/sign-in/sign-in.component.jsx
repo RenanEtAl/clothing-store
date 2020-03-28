@@ -37,7 +37,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   return (
     <SignInContainer>
       <SignInTitle>I already have an account</SignInTitle>
-      <span>Sign in with your email and password</span>
+      <span>Sign in to your account</span>
 
       <form onSubmit={handleSubmit}>
         <FormInput

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { ReactComponent as Logo } from "../../assets/crown.svg";
+import { ReactComponent as Logo } from "../../assets/boots.svg";
+
 import CartIcon from "../cart-icon/cart-icon.components";
 
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
@@ -19,17 +20,16 @@ import {
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
-      <Logo className="logo" />
+      <Logo title="Go To Homepage" className="logo" />
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink to="/shop">SHOP</OptionLink>
-      <OptionLink to="/shop">CONTACT</OptionLink>
+      <OptionLink title="Go To Shop" to="/shop">SHOP</OptionLink>
       {currentUser ? (
-        <OptionLink as="div" onClick={signOutStart}>
+        <OptionLink title ="Sign Out" as="div" onClick={signOutStart}>
           SIGN OUT
         </OptionLink>
       ) : (
-        <OptionLink to="/signin">SIGN IN</OptionLink>
+        <OptionLink title="Sign In" to="/signin">SIGN IN</OptionLink>
       )}
       <CartIcon />
     </OptionsContainer>
