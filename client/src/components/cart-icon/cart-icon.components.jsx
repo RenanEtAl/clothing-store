@@ -6,7 +6,7 @@ import {createStructuredSelector} from 'reselect'
 import { CartContainer, ItemCountContainer, ShoppingIcon } from "./cart-icon.styles";
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => (
-  <CartContainer title="Click Cart To Show Items" onClick={toggleCartHidden}>
+  <CartContainer title="Click To Show Cart" onClick={toggleCartHidden}>
     <ShoppingIcon />
     <ItemCountContainer>{itemCount}</ItemCountContainer>
   </CartContainer>

@@ -23,13 +23,13 @@ export const CollectionItemContainer = styled.div`
     width: 40vw;
 
     &:hover {
-    .image {
-      opacity: unset;
+      .image {
+        opacity: unset;
+      }
+      button {
+        opacity: unset;
+      }
     }
-    button {
-      opacity: unset;
-    }
-  }
   }
 `;
 
@@ -67,6 +67,7 @@ export const CollectionFooterContainer = styled.div`
 export const NameContainer = styled.span`
   width: 90%;
   margin-bottom: 15px;
+  
 `;
 
 export const PriceContainer = styled.span`

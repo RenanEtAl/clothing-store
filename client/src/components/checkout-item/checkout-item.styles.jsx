@@ -8,6 +8,14 @@ export const CheckoutItemContainer = styled.div`
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 18px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -22,6 +30,9 @@ export const ImageContainer = styled.div`
 
 export const TextContainer = styled.span`
   width: 23%;
+  @media screen and (max-width: 800px) {
+    width: 22%;
+  }
 `;
 
 export const QuantityContainer = styled(TextContainer)`
@@ -33,10 +44,20 @@ export const QuantityContainer = styled(TextContainer)`
 
   div {
     cursor: pointer;
+    &:hover {
+      background-color: darkgray;
+      border-radius: 50%;
+    }
   }
 `;
 
 export const RemoveButtonContainer = styled.div`
   padding-left: 12px;
+  padding-right: 12px;
   cursor: pointer;
+
+  &:hover {
+    background-color: darkgray;
+    border-radius: 50%;
+  }
 `;
