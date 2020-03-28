@@ -79,6 +79,20 @@ export const convertCollectionsSnapshotToMap = collections => {
   }, {});
 };
 
+// getting user's cart collection
+export const getUserCartRef = async userId => {
+  const cartRef = firestore.collection("carts").where("userId", "==", userId);
+  const snapShot = await cartRef.get();
+
+  if (snapShot.empty) {
+    const cartDocRef = firestore.collection("carts").doc();
+    await cartDocRef.set({ userId, cartItems: [] });
+    return cartDocRef;
+  } else {
+    return snapShot.docs[0].ref;
+  }
+};
+
 // recreating persistence
 // return a promise to work with redux-saga
 export const getCurrentUser = () => {
