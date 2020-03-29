@@ -9,7 +9,7 @@ import {
 } from "./collection-preview.styles";
 import { withRouter } from "react-router-dom";
 
-const CollectionPreview = ({ title, items, history, match, routeName }) => (
+export const CollectionPreview = ({ title, items, history, match, routeName }) => (
   <CollectionPreviewContainer>
     <TitleContainer title={`View ${title} Collection`} onClick={() => history.push(`${match.path}/${routeName}`)}>
       {title.toUpperCase()}

@@ -10,7 +10,7 @@ import {
   CollectionItemsContainer
 } from "./collection.styles";
 
-const CollectionPage = ({ collection }) => {
+export const CollectionPage = ({ collection }) => {
   //console.log('collectionpage', collection);
   const { title, items } = collection;
   return (

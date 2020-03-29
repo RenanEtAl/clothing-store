@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { ReactComponent as Logo } from "../../assets/boots.svg";
 
-import CartIcon from "../cart-icon/cart-icon.components";
+import CartIcon from '../cart-icon/cart-icon.component'
 
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { createStructuredSelector } from "reselect";
@@ -17,7 +17,7 @@ import {
   OptionLink
 } from "./header.styles";
 
-const Header = ({ currentUser, hidden, signOutStart }) => (
+export const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo title="Go To Homepage" className="logo" />
