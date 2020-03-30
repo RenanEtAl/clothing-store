@@ -57,7 +57,7 @@ export const RemoveButtonContainer = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: darkgray;
+    background-color: darkgrey;
     border-radius: 50%;
   }
 `;
